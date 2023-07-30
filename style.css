@@ -34,7 +34,7 @@ body{
 .about{
   font-family: 'segoe_ui-semibold';
   font-size: 40px;
-  width: 600px;
+  width: 80%;
   text-align: center;
   margin-top: 100px;
   margin-bottom: 20px;
@@ -100,13 +100,44 @@ nav{
   border-radius: 20px;
   background-color: rgb(145, 49, 231);
   width: 20px;
-  padding: 12px 40px;
-  margin-left: -140px;
-  padding-right: 100px;
+  padding: 12px 20px;
+  margin-left: -80px;
+  padding-right: 68px;
   cursor: pointer;
   color: white;
 }
 
+footer{
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
 
 
 /* About Us */
+
+
+
+
+/* Responsiveness Index */
+@media (max-width: 426px){
+  .other-details{
+    width: 90%;
+  }
+  nav{
+    padding: 0px 15px;
+  }
+
+  .about{
+    font-size: 36px;
+
+  }
+
+  .prompt-input{
+    margin: 10px;
+    padding: 10px 60px;
+  }
+}
