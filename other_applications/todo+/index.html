@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo</title>
+</head>
+<body>
+  <h1>Todo+</h1>
+
+  <div class="">
+    <form action="">
+      <label for="taskInput">
+        <input required name="taskInput" autofocus type="text" id="taskInput">
+      </label>
+        <input type="submit" value="Add" id="submitBtn">
+  
+    </form>
+  </div>
+  <div class="tasks-container">
+    <ul class="tasks-list">
+      <li>Laundry</li>
+    </ul>
+  </div>
+
+
+  <script>
+    const task = document.querySelector('#taskInput')
+    const submitBtn = document.querySelector('#submitBtn')
+
+
+    // Disabling the 'submit' button if there is no value in it.
+    document.querySelector('#submitBtn').disabled = true;
+    document.querySelector('#taskInput').onkeypress = () => {
+      if(document.querySelector('#taskInput').value.length > 0 )
+      {
+        document.querySelector("#submitBtn").disabled = false;
+      }
+    };
+
+    submitBtn.addEventListener('click', () => {
+      console.log(task.value)
+      const newTask = document.createElement('li')
+      newTask.innerHTML = task.value
+
+      document.querySelector('ul').append(newTask)
+
+      
+      task.value = '';
+      // document.querySelector('li').innerText = task.value;
+    })
+  </script>
+</body>
+</html>

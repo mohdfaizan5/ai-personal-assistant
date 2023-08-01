@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    if(!localStorage.getItem('count')){
+
+      localStorage.setItem('count', 0)
+    };
+
+    let count = localStorage.getItem('count');
+    console.log(count)
+    document.addEventListener('DOMContentLoaded', ()=> {
+      document.querySelector('h1').innerHTML = count;
+      document.querySelector('button').onclick = ()=> {
+        count++
+        document.querySelector('h1').innerHTML = count;
+        localStorage.setItem('count', count)
+      };
+      
+    });
+  </script>
+</head>
+<body>
+  <h1>0</h1>
+  <button>Count</button>
+  
+</body>
+</html>

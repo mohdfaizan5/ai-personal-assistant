@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'segoe_ui-semibold';
+  src: url(assets/fonts/segui-semi-bold-regular.ttf);
+}
+
+@font-face {
+  font-family: 'segoe_ui-black';
+  src: url(assets/fonts/segui-black.ttf);
+}
+
+@font-face {
+  font-family: 'segoe_ui';
+  src: url(assets/fonts/SegoeUI.ttf);
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'segoe_ui';
+
+  /* font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+  /* font-family: 'segoe_ui-black' system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   */
+  background-color: rgb(17, 24, 39);
+  color: white;
+}
+
+
+.home-front-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about{
+  font-family: 'segoe_ui-semibold';
+  font-size: 40px;
+  width: 80%;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.other-details{
+  
+  height: 900px;
+  width: 1200px;
+  background-image: linear-gradient(to left,rgb(92,74,150) ,rgb(162,134,213));
+  border-radius: 30px;
+  box-shadow: 0px -5px 85px rgba(162, 134, 213, 0.466);
+}
+
+
+/* Nav */
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 70px;
+  align-items: center;
+  height: 60px;
+  margin-top: 10px;
+  border-bottom: 1px solid rgba(162, 134, 213, 0.726);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding-bottom: 15px;
+}
+
+.nav-company-name{
+  font-size: 35px;
+  display: inline-block;
+}
+
+.nav-button{
+  border: 1px solid white;
+  color: white; 
+  background-color: rgb(17, 24, 39);
+  padding: 5px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-company-logo{
+  width: 35px;
+  margin-right: 10px;
+  /* display: inline-block; */
+}
+
+
+.description{
+  color: rgb(209, 213, 219);
+  font-size: 15px; 
+  margin-bottom: 30px;
+  color: rgb(209, 213, 219);
+}
+
+
+/* input */
+
+.prompt-input{
+  background-color: rgb(31, 41, 55);
+  border: none;
+  padding: 12px 160px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.search-btn{
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(145, 49, 231);
+  width: 20px;
+  padding: 12px 20px;
+  margin-left: -80px;
+  padding-right: 68px;
+  cursor: pointer;
+  color: white;
+}
+
+.mic-btn{
+  background-color: transparent;
+  border: none;
+  margin-left: -110px;
+  padding-top: 10px;
+  position: absolute;
+}
+
+footer{
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+/* About Us */
+
+
+
+
+/* Responsiveness Index */
+@media (max-width: 426px){
+  .other-details{
+    width: 90%;
+  }
+  nav{
+    padding: 0px 15px;
+    padding-bottom: 15px;
+  }
+
+  .about{
+    font-size: 36px;
+
+  }
+
+  .prompt-input{
+    margin: 10px;
+    padding: 10px 60px;
+    color: rgb(145, 49, 231);
+    color: rgb(17, 24, 39);
+  }
+}
+

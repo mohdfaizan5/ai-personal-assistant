@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro+</title>
+</head>
+
+<body>
+  <h1>Pomodoro+</h1>
+  <h2 style="display: flex;">
+    <div class="min">
+      2
+    </div>:
+    <div class="sec">
+      00
+    </div>
+  </h2>
+  <button id="startBtn">Start</button>
+  <div id="message"></div>
+  <script>
+    
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+      
+
+
+      // start time when clicked
+      document.querySelector('button').onclick = () => {
+
+        document.querySelector('button').disabled = true;
+        let mins = 2;
+        let secs = 60;
+        // Targeting numbers and incrementing
+        function count(){
+          secs--
+          console.log(secs)
+          document.querySelector('.sec').innerHTML = secs
+          
+        };
+
+        // 
+        const timer = setInterval(() => {
+
+          count(); // This is counting on sec
+          if(secs === 0){
+            if(mins===0 && secs == 0){
+              clearInterval(timer)
+              document.querySelector('.min').innerHTML = '00'
+              document.querySelector('.sec').innerHTML = '00'
+              document.querySelector('#message').innerHTML = 'Congrat!!🎉🎉🎉'
+              document.querySelector('button').disabled = false;
+            }
+            else{
+
+              secs = 60;
+              mins--
+              document.querySelector('.min').innerHTML = mins
+            }
+          }
+
+        }, 1000)
+
+        }
+    });
+  </script>
+</body>
+
+</html>
