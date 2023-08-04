@@ -1,4 +1,4 @@
- # .ai
+ # Teams:
 
 ### Tasks:
 
@@ -94,11 +94,17 @@ Yesterday Today | Priority | Tomorrow | WeekGoal | Monthly goal|
 
 
 
-
-
 ### Projects to build to learn js.
 
 |Projects|link |Difficulty|What should you focus on learing|
 |---|---|---|---|
 |keyboard tester.|https://www.onlinemictest.com/keyboard-test/|medium| Basic understanding of event listners
 |Typing app | https://www.typingclub.com/sportal/program-3/117.play | Difficult |Learn animations|
+
+
+
+Tools 
+* notion
+* Google docs
+* Github projects
+* 
