@@ -29,7 +29,7 @@ Mision
 # Action steps:
 
 - [ ] 10 tasks/commanands ✅
-- [ ] 3 best yt channels, article publisher, best projects.
+- [ ] 3 knowledgeable resources on AI (yt channels, article publisher, best projects).
 
 
 - [x] Learn particular js concepts
