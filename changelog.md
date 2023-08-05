@@ -50,13 +50,11 @@ Mision
 - [ ] 
 
 
-|days |date|task every one should do|
-|---|---|---|
-|day3|5th aug|COmpolte 10 commands|
-|day3|5th aug|COmpolte 10 commands|
-|day3|5th aug|COmpolte 10 commands|
-|day3|5th aug|COmpolte 10 commands|
-|day3|5th aug|COmpolte 10 commands|
+|days |date|task every one should do|JS concepts|
+|---|---|---|---|
+|day2|3th aug|COmpolte 10 commands||
+|day3|4th aug|3 best yt channels, article publisher, best projects.|
+|day4|5th aug|Make document on selected AI|js api workings|
 
 
 - tell all the tools
