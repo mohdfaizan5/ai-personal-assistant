@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Nunito' ;
+  src: url(../assets/fonts/Nunito-Italic-VariableFont_wght.ttf);
+}
+
+
+body{
+  font-family: Nunito;
+  background-color: rgb(234, 234, 234);
+  color: rgb(37, 42, 52); 
+}
+
+h1{
+  color: rgb(255, 46, 99);
+}

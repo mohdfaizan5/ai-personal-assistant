@@ -3,19 +3,12 @@
 ### Tasks:
 
 1. Help me meditate and track it.
-
 2. Help me remember things by exploiting forgetting curve
-
 3. Help me create habit and task systems.
-
 4. Stacking tasks on single commmand [ merging / automating many retlated tasks]
-
 5. Calender++ (scientifically researched and Psycologically appealing calencer for max productivity and results.) I
-
 6. Monitor monthly and weekly goals.
-
 7. Booking cabs and other services.
-
 8. 
 
 
@@ -24,34 +17,27 @@
 
 * Health
   - Family health tracking.
-
 * Finance management.
-
 * Psycologically minimalist and interactive UI and UX.
-
 * Phrases and words used by assistant will make onself more comfortable to communicated with AI.
+
+
 
 ### Action Steps
 
-[ ] What projects other did to win hackathons and how?
+- [ ] What projects other did to win hackathons and how?
+- [ ] Competator research:
 
-[ ] Competator research:
+  and Finding all competators and similar expectations claiming applications
 
-and Finding all competators and similar expectations claiming applications
-
-- Assigning each competator AI application to every member of team and get detailed report on study of its features,
+  - Assigning each competator AI application to every member of team and get detailed report on study of its features,
+- [ ] Make a .md document to with reference videos and other. 
 
 
 ### Parameters:
 
 * why it is better than other AI's
-
 * What features and qualities other people like about that AI * ETC...
-
-
-
-
-- [ ] Make a .md document to with reference videos and other. 
 
 ### What AI dashboard will contain:
 
