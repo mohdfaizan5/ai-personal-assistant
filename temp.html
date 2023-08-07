@@ -4,72 +4,172 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script>
-    if ("webkitSpeechRecognition" in window) {
-  // Initialize webkitSpeechRecognition
-  let speechRecognition = new webkitSpeechRecognition();
-
-  // String for the Final Transcript
-  let final_transcript = "";
-
-  // Set the properties for the Speech Recognition object
-  speechRecognition.continuous = true;
-  speechRecognition.interimResults = true;
-  speechRecognition.lang = document.querySelector("#select_dialect").value;
-
-  // Callback Function for the onStart Event
-  speechRecognition.onstart = () => {
-    // Show the Status Element
-    document.querySelector("#status").style.display = "block";
-  };
-  speechRecognition.onerror = () => {
-    // Hide the Status Element
-    document.querySelector("#status").style.display = "none";
-  };
-  speechRecognition.onend = () => {
-    // Hide the Status Element
-    document.querySelector("#status").style.display = "none";
-  };
-
-  speechRecognition.onresult = (event) => {
-    // Create the interim transcript string locally because we don't want it to persist like final transcript
-    let interim_transcript = "";
-
-    // Loop through the results from the speech recognition object.
-    for (let i = event.resultIndex; i < event.results.length; ++i) {
-      // If the result item is Final, add it to Final Transcript, Else add it to Interim transcript
-      if (event.results[i].isFinal) {
-        final_transcript += event.results[i][0].transcript;
-      } else {
-        interim_transcript += event.results[i][0].transcript;
+  <style>
+        @keyframes quiet {
+      25%{
+        transform: scaleY(.6);
+      }
+      50%{
+        transform: scaleY(.4);
+      }
+      75%{
+        transform: scaleY(.8);
       }
     }
 
-    // Set the Final transcript and Interim transcript.
-    document.querySelector("#final").innerHTML = final_transcript;
-    document.querySelector("#interim").innerHTML = interim_transcript;
-  };
+    @keyframes normal {
+      25%{
+        transform: scaleY(1);
+      }
+      50%{
+        transform: scaleY(.4);
+      }
+      75%{
+        transform: scaleY(.6);
+      }
+    }
+    @keyframes loud {
+      25%{
+        transform: scaleY(1);
+      }
+      50%{
+        transform: scaleY(.4);
+      }
+      75%{
+        transform: scaleY(1.2);
+      }
+    }
+    waveContainer{
+      display: flex;
+      justify-content: center;
+      background: black;
+      margin: 0;padding: 0;
+      align-items: center;
+      height: 100vh;
+    }
 
-  // Set the onClick property of the start button
-  document.querySelector("#start").onclick = () => {
-    // Start the Speech Recognition
-    speechRecognition.start();
-  };
-  // Set the onClick property of the stop button
-  document.querySelector("#stop").onclick = () => {
-    // Stop the Speech Recognition
-    speechRecognition.stop();
-  };
-} else {
-  console.log("Speech Recognition Not Available");
-}
+    .boxContainer{
+      display: flex;
+      justify-content: space-between;
+      height: 64px;
+      --boxSize: 8px;
+      --gutter: 4px;
+      width: calc((var(--boxSize) + var(--gutter)) * 5);
+    }
+
+    .box{
+      transform: scaleY(.4);
+      height: 100%;
+      width: var(--boxSize);
+      background: #12E2DC;
+      animation-duration: 1.2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      border-radius: 8px;
+    }
+
+    .box1{
+      animation-name: quiet;
+    }
+
+    .box2{
+      animation-name: normal;
+    }
+
+    .box3{
+      animation-name: quiet;
+    }
+
+    .box4{
+      animation-name: loud;
+    }
+
+    .box5{
+      animation-name: quiet;
+    }
+  </style>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', ()=> {
+
+      document.querySelector('.boxContainer').style.display = 'none';
+    })
+
+      let recognition = new webkitSpeechRecognition();
+
+      // this will continously listen to the user
+      recognition.continuous = true;
+
+      // setting lang en-Global
+      recognition.lang = 'en-GB';
+
+      // This event does when object starts 
+      recognition.onstart = () => {
+        document.querySelector('p').innerHTML = 'hi listening...'; 
+        console.log('Started Listening...')  
+        document.querySelector('.boxContainer').style.display = 'flex'
+      }
+
+
+      // This event will trigger when listneing is stopped
+      recognition.onend = () => {
+        document.querySelector('p').innerHTML = '';   
+        console.log("Stopped Listening")
+        document.querySelector('.boxContainer').style.display = 'none'
+      }
+
+      // For continous listning:
+      recognition.continuous = true;
+
+      // This is the final text that is been displayed when everything is processed
+      recognition.onresult = (event) => {
+        console.log(event.results.transcript)
+        document.querySelector('p').innerHTML = event.results[0][0].transcript;
+
+      }  
+
   </script>
 </head>
 <body>
-  <div class="p-3" style="border: 1px solid gray; height: 300px; border-radius: 8px;">
-    <span id="final" class="text-light"></span>
-    <span id="interim" class="text-secondary"></span>
-  </div>
   
+  <input type="text" name="" id="final">
+  <button onclick="recognition.start()">Start</button>
+  <button onclick="recognition.stop()">Stop</button>
+  <div class='waveContainer'>
+
+    <div class="boxContainer">
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+      <div class="box box3"></div>
+      <div class="box box4"></div>
+      <div class="box box5"></div>
+    </div>
+      
+    </div>
+  <p>.</p>
 </body>
 </html>
+
+<!-- 
+*Project Management*
+
+This place will contain all the work that needs to be completed. And new tasks will be assigned here 👇
+
+https://github.com/users/mohdfaizan5/projects/9/views/1 -->
+
+<!-- recognition.lang = 'en-GB' // lang is english global
+
+recognition.onstart = () => {
+  console.log('listening....')
+}
+
+recognition.start(); -->
+
+
+<!-- 
+  ref:
+  https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
+  https://www.youtube.com/watch?v=QzMVsw94k50
+  https://github.com/zolomohan/speech-recognition-in-javascript/blob/master/speechRecognition.js
+  https://blog.zolomohan.com/speech-recognition-in-javascript
+ -->

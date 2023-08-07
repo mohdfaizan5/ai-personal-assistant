@@ -4,9 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Natasha.ai</title>
-  <link rel="shortcut icon" href="assets/favicon-32x32.png">
 
-  <link rel="stylesheet" href="static/style.css">
+  <!-- FavIcon -->
+  <link rel="shortcut icon" href="static/assets/favicon-32x32.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="static/css/general.css">
+  <link rel="stylesheet" href="static/css/style.css">
 
   <!-- Font awesome icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,7 +24,7 @@
         justify-content: center;
         align-items: center;
       ">
-        <img src="assets/favicon-32x32.png" class="nav-company-logo" alt="nav-log">
+        <img src="static/assets/favicon-32x32.png" class="nav-company-logo" alt="nav-log">
         <h1 class="nav-company-name">Natasha</h1>
    
       </div>
@@ -35,17 +39,69 @@
       <div class="description">
         Voice and text activated superpower
       </div>
-      <div>
-        <label for="input-prompt">
-          <input autofocus class="prompt-input" placeholder="Search..." name="input-prompt" type="text" required>
-        </label>
 
-        <button class="mic-btn" type="button">
-          <i class="fa-solid fa-xl fa-microphone" style="color: white;"></i>        </button>
-        <button class="search-btn" type="submit">Search</button>
-      </div>
+
+
       <div class="other-details">
-        
+
+        <!-- INput and speechRecognition system -->
+        <div class="input-container">
+          <div>
+            <label for="input-prompt">
+              <input autofocus class="prompt-input" placeholder="Search..." name="input-prompt" type="text" required>
+            </label>
+          </div>
+  
+          <div>
+            <button class="mic-btn" type="button">
+              <i class="fa-solid fa-xl fa-microphone" style="color: white;"></i>
+            </button>
+          </div>
+
+          <div>
+            <button class="search-btn" type="submit">Search</button>
+          </div>
+        </div>
+
+
+        <!-- This section will be chat between user and ai -->
+        <section>
+          <div class='waveContainer'>
+
+            <div class="boxContainer">
+              <div class="box box1"></div>
+              <div class="box box2"></div>
+              <div class="box box3"></div>
+              <div class="box box4"></div>
+              <div class="box box5"></div>
+            </div>
+              
+            </div>
+
+          </section>
+          <div class="user-ai-chat-container" >
+            <b style="color: white;">User</b>:
+            <p class="user-speech"></p>
+            <p class="user-speech-interim"></p>
+          </div>
+
+
+
+        <!-- <div style="width: 50%;">
+          <input type="text" value="hi" style="
+            /* width: 50%; */
+            background-color: transparent;
+            border: 1px solid black;
+            height: 200px;
+            width: 80%;
+            padding: 20px;
+            ">
+        </div>
+        <div>
+
+          <button>Start</button>
+          <button>Stop</button>
+        </div> -->
       </div>
 
     </div>  
@@ -55,50 +111,7 @@
     &copy;Natasha
   </footer>
 
-  <script>
-
-    prompt('Username','pass')
-    let a = prompt('Password')
-    a.valueOf(alert(a))
-    let userText = document.querySelector('.prompt-input');
-    const btn = document.querySelector('.search-btn');
-    const micBtn = document.querySelector('.mic-btn');
-
-    const welcomeGreet = 'Hey Champ, hope you are doing well';
-    // speak(welcomeGreet)
-
-    document.addEventListener('DOMContentLoaded', () => {
-      btn.addEventListener('click', function(){
-        console.log(userText.value);
-
-        if(userText.value.includes('sad')){
-          speak('Dont be sad man!! God is with you')
-        }
-
-        // speak(userText.value)
-      })
-
-      // Speak when mic button is clicked
-      micBtn.addEventListener('click', function(){
-        speak(welcomeGreet)
-      })
-      
-    })
-
-    
-
-
-    function speak(text){
-      
-      // Create a new speechSynthesisU
-      let utterance = new SpeechSynthesisUtterance();
-
-      utterance.text = text
-      utterance.voice = window.speechSynthesis.getVoices()[5]
-
-      // Finally speaking
-      window.speechSynthesis.speak(utterance)
-    }
-  </script>
+  <script src="static/js/script.js"></script>
+  <script type="module" src="static/js/speechRecognition.js"></script>
 </body>
 </html>
