@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   recognition.onend = () => {   
     console.log("Stopped Listening")
     document.querySelector('.waveContainer').style.display = 'none'
+    final_transcript += '. <br>'
   }
 
   // For continous listning:
