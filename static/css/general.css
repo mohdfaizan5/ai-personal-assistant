@@ -26,26 +26,3 @@ body{
 
 
 
-/* Responsiveness Index */
-@media (max-width: 426px){
-  .other-details{
-    width: 90%;
-  }
-  nav{
-    padding: 0px 15px;
-    padding-bottom: 15px;
-  }
-
-  .about{
-    font-size: 36px;
-
-  }
-
-  .prompt-input{
-    margin: 10px;
-    padding: 10px 60px;
-    color: rgb(145, 49, 231);
-    color: rgb(17, 24, 39);
-  }
-}
-
