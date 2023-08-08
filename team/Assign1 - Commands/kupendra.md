@@ -9,7 +9,7 @@
 9. operating smart application
 10. health report
 11. device trouble shooter [if there any problem occur in device(mobile,laptop)]
-12. weather report
+12. weather report 
 
 
 Hey Natasha!!. Your Personal AI Assistant that helps you in your daily work. Voice and text activated superpower...

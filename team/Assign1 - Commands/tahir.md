@@ -4,7 +4,7 @@
 2. If working on something like Javascript (asking quiz or some questions) 
 3. Should ask about one's day and health and (getting attached to it emotionally) 
 4. Integrating other Al
-5. Somehow it should make you do the work and be disciplined (by reminding/)
+5. Somehow it should make you do the work and be disciplined (by reminding/) 
 6. Making people grow by (spiritually,mentally, physically)
 7. Team tracking, giving tasks, submission date.
 8. Providing Roadmaps of any skill that u wanna persue (with tick boxes)

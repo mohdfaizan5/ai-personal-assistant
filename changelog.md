@@ -50,20 +50,21 @@ Mision
 - [ ] 
 
 
-|days |date|task every one should do|
-|---|---|---|
-|day3|5th aug|COmpolte 10 commands|
-|day3|5th aug|COmpolte 10 commands|
-|day3|5th aug|COmpolte 10 commands|
-|day3|5th aug|COmpolte 10 commands|
-|day3|5th aug|COmpolte 10 commands|
-
+|days |date|task every one should do|JS concepts|
+|---|---|---|---|
+|day1|3th aug|Complete 10 commands|Maths,string,variable|
+|day2|4th aug|3 best yt channels, article publisher, best projects.|Booleans & if statement,functions|
+|day3|5th aug|Make document on selected AI|objects,DOM|
+|day4|6th aug|Ai tools with specified features|Arrays and loops|
+|day5|7th aug|Create Text to Speech Converter using JavaScript |js api workings|
+|day6|8th aug|Speech Recognition App Using  JavaScript|Advance functions|
+|day7|9th aug|Build Pomodomra|Part 2 videos|
+|day8|10th aug|Build Todo apps|Complete Amazon projects(part2)|
+|day9|11th aug|Make projects on Chart bots|Build some js projects|
 
 - tell all the tools
-- 
 
-
-
+      - Speech rec and telling
 https://github.com/mohdfaizan5/ai-personal-assistant/projects?query=is%3Aopen
 
 This is the github projects link, from here will be operating tasks assignments, etc from now.
