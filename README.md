@@ -36,3 +36,24 @@
     - Tertiory: rgb(209, 213, 219)
 
 ref (https://eclipsefin.netlify.app/?ref=landingfolio)
+
+
+
+### video references
+
+#### Friction
+https://www.youtube.com/watch?v=EbUonT3RfpE
+https://www.youtube.com/shorts/1oXxKicQvw0
+Mark Zakerburg https://www.youtube.com/watch?v=vvimBPJ3XGQ
+G-assistant call - https://www.youtube.com/watch?v=JvbHu_bVa_g
+
+#### Learing
+python AI - https://www.youtube.com/watch?v=Jn45AFQKuD8&list=PLkjZS1KzvTGHKJnWMSz_IguydzRrTEHC2&index=3
+https://www.youtube.com/playlist?list=PLkjZS1KzvTGHKJnWMSz_IguydzRrTEHC2 - Awesome one python
+
+
+
+
+#### Machine learning:
+Computer Vision with Machine Learning | Building My own AI Home Assistant | Ghost AI https://www.youtube.com/watch?v=OzXsZjjk1zY&list=PLR8vUZDE6IePK09ZcROHLnSSiuZzFNcrr&index=4
+

@@ -73,16 +73,23 @@ nav{
 .prompt-input{
   background-color: rgb(31, 41, 55);
   border: none;
-  padding: 12px 160px;
+  /* padding: 12px 160px; */
+  padding: 2px 40px;
+  width: 800px;
+  height: 38px;
   border-start-start-radius: 20px;
   border-end-start-radius: 20px;
   margin-bottom: 30px;
   color: white; 
-
+  font-size: 18px;
 }
-.prompt-input::after{
+/* .prompt-input:focus{
   color: white;
-}
+  
+} */
+/* input[type=text]:focus {
+  border: 5px solid #8842d5; 
+} */
 
 .mic-btn{
   background-color: transparent;
@@ -91,6 +98,9 @@ nav{
   background-color: rgb(145, 49, 231);
 
   padding: 10px;
+  height: 42px;
+  width: 45px;
+  border-right: 1px solid rgb(31, 41, 55);
 }
 
 
@@ -99,11 +109,15 @@ nav{
   border-end-end-radius: 20px;
   border-start-end-radius: 20px;
   background-color: rgb(145, 49, 231);
-  width: 20px;
-  padding: 12px 20px;
-  padding-right: 68px;
+  /* width: 20px;
+  height: 42px; */
+  /* padding: 12px 20px;
+  padding-right: 68px; */
+  height: 42px;
+  padding: 0px 20px;
   cursor: pointer;
   color: white;
+  font-size: 18px;
 }
 .search-btn::selection{
   border: 1px solid red;
@@ -254,6 +268,7 @@ waveContainer{
   .prompt-input{
     margin-left: 10px;
     padding: 10px 30px;
+    width: 75%;
     color: rgb(145, 49, 231);
     color: rgb(17, 24, 39);
     height: 30px;

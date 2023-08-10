@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   recognition.onend = () => {   
     console.log("Stopped Listening")
     document.querySelector('.waveContainer').style.display = 'none'
-    final_transcript += '. <br>'
+    final_transcript += '. '
   }
 
   // For continous listning:
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         interim_transcript += event.results[i][0].transcript;
       }
     }
-    document.querySelector(".user-speech").innerHTML = final_transcript;
+    document.querySelector(".prompt-input").value = final_transcript;
     document.querySelector(".user-speech-interim").innerHTML = interim_transcript;
 
   }  
@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btn.addEventListener('click', function(){
     console.log(userText.value);
+    speak(document.querySelector('.prompt-input').value)
 
     if(userText.value.includes('sad')){
       speak('Dont be sad man!! God is with you')
@@ -89,16 +90,23 @@ document.addEventListener('DOMContentLoaded', () => {
   
 })
 
+let settingVoice = setInterval(()=> {
 
-
+  if(speechSynthesis.getVoices().length !== 0)
+  {
+    utterance.voice = window.speechSynthesis.getVoices()[3]
+    clearInterval(settingVoice)
+  }
+}, 200)
 
 function speak(text){
   
   // Create a new speechSynthesisU
   let utterance = new SpeechSynthesisUtterance();
 
+  
   utterance.text = text
-  utterance.voice = window.speechSynthesis.getVoices()[5]
+
 
   // Finally speaking
   window.speechSynthesis.speak(utterance)
