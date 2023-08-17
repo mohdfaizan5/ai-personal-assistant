@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pomodoro</title>
+</head>
+<body>
+  <main>
+    <h1 class="pomodoro">Pomodoro</h1>
+    <span>
+        <span class="minContainer" id="minContainer1">
+            25
+        </span> : 
+        <span class="secContainer" id="secContainer1">
+            60
+        </span>
+    </span>
+    <div class="buttons">
+        <button class="start" onclick="startPomo()">Start</button>
+        <button class="reset" onclick="resetPomo() ">Reset</button>
+    </div>
+    <div class="username">
+
+    </div>
+    <div class="minInput">
+        <button onclick="
+            minutes ++;
+            document.getElementById('minContainer1').innerHTML = minutes;
+
+            ">⬆️</button>
+        <button>⬇️</button>
+    </div>
+  </main>
+    <script src="script.js"></script>
+</body>
+</html>
