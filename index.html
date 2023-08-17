@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,13 +12,17 @@
   <!-- CSS -->
   <link rel="stylesheet" href="static/css/general.css">
   <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="static/css/nav&footer.css">
 
   <!-- Font awesome icon -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
+
 <body>
-  
+
   <main>
     <nav>
       <div style="display: flex;
@@ -26,10 +31,10 @@
       ">
         <img src="static/assets/favicon-32x32.png" class="nav-company-logo" alt="nav-log">
         <h1 class="nav-company-name">Natasha</h1>
-   
+
       </div>
-     <a href="about.html">
-        <button class="nav-button">Feedback ></button>
+      <a href="static/about.html">
+        <button class="nav-button">About ></button>
       </a>
     </nav>
     <div class="home-front-container">
@@ -52,7 +57,7 @@
             </label>
           </div>
 
-  
+
           <div>
             <button class="mic-btn" type="button">
               <i class="fa-solid fa-xl fa-microphone" style="color: white;"></i>
@@ -76,36 +81,19 @@
               <div class="box box4"></div>
               <div class="box box5"></div>
             </div>
-              
-            </div>
 
-          </section>
-          <div class="user-ai-chat-container" >
-            <b style="color: white;">User</b>:
-            <p class="user-speech"></p>
-            <p class="user-speech-interim"></p>
           </div>
 
-
-
-        <!-- <div style="width: 50%;">
-          <input type="text" value="hi" style="
-            /* width: 50%; */
-            background-color: transparent;
-            border: 1px solid black;
-            height: 200px;
-            width: 80%;
-            padding: 20px;
-            ">
+        </section>
+        <div class="user-ai-chat-container">
+          <b style="color: white;">User</b>:
+          <p class="user-speech"></p>
+          <p class="user-speech-interim"></p>
         </div>
-        <div>
 
-          <button>Start</button>
-          <button>Stop</button>
-        </div> -->
       </div>
 
-    </div>  
+    </div>
   </main>
 
   <footer>
@@ -115,4 +103,5 @@
   <script src="static/js/script.js"></script>
   <script type="module" src="static/js/speechRecognition.js"></script>
 </body>
+
 </html>

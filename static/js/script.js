@@ -63,10 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btn.addEventListener('click', function(){
     console.log(userText.value);
-    speak(document.querySelector('.prompt-input').value)
+    // speak(document.querySelector('.prompt-input').value)
 
     if(userText.value.includes('sad')){
       speak('Dont be sad man!! God is with you')
+    }
+
+    if(userText.value.includes('create a forgetting curve')){
+      speak('What should I create a forgetting curve for,');
+      createForgettingCurve();
     }
 
     // speak(userText.value)
@@ -104,6 +109,9 @@ function speak(text){
   // Create a new speechSynthesisU
   let utterance = new SpeechSynthesisUtterance();
 
+  // Changing voice to girl
+  utterance.voice = window.speechSynthesis.getVoices()[5];
+
   
   utterance.text = text
 
@@ -134,4 +142,12 @@ function listen(){
   // Start recognition
   recognition.start();
 
+}
+
+function createForgettingCurve(){
+  recognition.start()
+  if(userText.value){
+    let newFC = userText.value
+    speak(`Created a forgetting curve for ${newFC}`)
+  } 
 }

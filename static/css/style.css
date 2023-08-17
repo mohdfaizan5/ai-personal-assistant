@@ -15,41 +15,7 @@
 
 
 
-/* Nav */
-nav{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0px 70px;
-  align-items: center;
-  height: 60px;
-  margin-top: 10px;
-  border-bottom: 1px solid rgba(162, 134, 213, 0.726);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  padding-bottom: 15px;
-}
 
-.nav-company-name{
-  font-size: 35px;
-  display: inline-block;
-}
-
-.nav-button{
-  border: 1px solid white;
-  color: white; 
-  background-color: rgb(17, 24, 39);
-  padding: 5px 10px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.nav-company-logo{
-  width: 35px;
-  margin-right: 10px;
-  /* display: inline-block; */
-}
 
 
 .description{

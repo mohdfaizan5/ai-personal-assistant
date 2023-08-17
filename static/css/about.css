@@ -1,0 +1,23 @@
+body{
+  padding: 0px 10px;
+}
+
+.faqContainer{
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px;
+  align-items: start;
+}
+
+.faqContainer h2{
+  font-size: 22px;
+
+}
+
+.answer{
+  font-size: 17px;
+}
+
+.answer span{
+  text-decoration: underline;
+}
