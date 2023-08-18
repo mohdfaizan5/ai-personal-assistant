@@ -43,22 +43,3 @@ function resetPomo(){
 }
 
 
-// function min(){
-//     // seconds = document.getElementById('secContainer1').innerHTML;
-//     seconds = seconds - 1;
-//     document.getElementById('secContainer1').innerHTML = seconds;
-//     if (seconds === 0){
-      
-//         seconds = 10;
-//         minutes = minutes - 1;
-//         document.getElementById('minContainer1').innerHTML = minutes;
-//         document.getElementById('secContainer1').innerHTML = seconds;
-       
-
-//     }
-//     if(minutes === 0 && seconds === 0){
-//         document.getElementById('minContainer1').innerHTML = 0;
-//         document.getElementById('secContainer1').innerHTML = 0;
-//     }
-   
-// }

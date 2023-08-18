@@ -1,3 +1,11 @@
+// import { otherFile } from './speechRecognition.js';
+ 
+// otherFile();
+let allQuestions = {
+  'what is your name':'natasha',
+  'create a forgetting curve':'yes i'
+}
+
 
 let userText = document.querySelector('.prompt-input');
 const btn = document.querySelector('.search-btn');
@@ -59,11 +67,16 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
 
-
+  // Handling user input.
 
   btn.addEventListener('click', function(){
     console.log(userText.value);
     // speak(document.querySelector('.prompt-input').value)
+
+    // if(userText.value.includes(allQuestions.forEach(element => {
+    //   element.key
+      
+    // });))
 
     if(userText.value.includes('sad')){
       speak('Dont be sad man!! God is with you')
@@ -71,7 +84,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if(userText.value.includes('create a forgetting curve')){
       speak('What should I create a forgetting curve for,');
+      console.log('What should I create a forgetting curve for,');
       createForgettingCurve();
+    }
+
+    if(userText.value.includes('pomodoro')){
+      console.log(userText.value)
+      speak('opening pomodoro')
+      window.location = './other_applications/pomodoro-akshay/'
+    }
+
+    if(userText.value.includes('forgetting curve')){
+      console.log(userText.value)
+      speak('opening forgetting curve')
+      window.location = './other_applications/forgetting-curve-faizan/'
+    }
+
+    if(userText.value.includes('who are you') || userText.value.includes('tell me something about you') ){
+      speak('...  I am personal assistant that can help you in your daily work.')
     }
 
     // speak(userText.value)
@@ -95,14 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
 })
 
-let settingVoice = setInterval(()=> {
-
-  if(speechSynthesis.getVoices().length !== 0)
-  {
-    utterance.voice = window.speechSynthesis.getVoices()[3]
-    clearInterval(settingVoice)
-  }
-}, 200)
 
 function speak(text){
   
@@ -110,14 +132,18 @@ function speak(text){
   let utterance = new SpeechSynthesisUtterance();
 
   // Changing voice to girl
-  utterance.voice = window.speechSynthesis.getVoices()[5];
+  // utterance.voice = window.speechSynthesis.getVoices()[5]; //Eng Google UK Female.
 
-  
+  // speak what arg is passed to it.
   utterance.text = text
-
 
   // Finally speaking
   window.speechSynthesis.speak(utterance)
+
+  utterance.onstart = (event)=> {
+    console.log('started speaking')
+  }
+
 }
 
 function listen(){
