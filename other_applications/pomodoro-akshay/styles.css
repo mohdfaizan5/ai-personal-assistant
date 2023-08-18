@@ -19,6 +19,14 @@ span{
     
 button{
     position: relative;
-    
+    border: none;
+
+    background-color: rgb(234, 234, 234);
     color: rgb(255, 46, 99);
+}
+.Sessionup{
+    font-size: xx-large;
+}
+.Sessiondown{
+    font-size: xx-large;
 }
