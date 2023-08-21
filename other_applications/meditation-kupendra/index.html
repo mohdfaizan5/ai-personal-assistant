@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Meditation Web App</title>
+    <link rel="shortcut icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+     <style>
+        body {
+            display: flex;
+             justify-content: center;
+            align-items: center;
+        } 
+
+        /* p {
+            font-size: 100px;
+            color:tomato;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center; */
+        /* } */
+       .bg-video{
+        /* background-color: rgb(17, 24, 39); */
+        position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+                }
+        button{
+           background-color: transparent;
+           border: none;
+           cursor: pointer;
+        }
+/* 
+        .dropdown-menu{
+            color: transparent;
+            background-color: transparent; */
+        /* } */
+       select{
+       
+        cursor: pointer;
+        background-color: transparent;
+        padding: 10px;
+        width: 150px;
+        text-align: center;
+    
+        
+       }
+
+        #sel{
+            
+          /* background-color:rgb(2, 96, 83) ;  */
+          font-family: monospace;
+          color:darkgreen;
+         border-color: transparent;
+
+        }
+        
+.timer {
+  font-family: sans-serif;
+  display: inline-block;
+  padding: 24px 32px;
+  border-radius: 30px;
+  background: transparent;
+}
+
+.timer__part {
+  font-size: 36px;
+  font-weight: bold;
+  color: wheat;
+}
+
+.timer__btn {
+  width: 50px;
+  height: 50px;
+  margin-left: 16px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  /* background: transparent; */
+  cursor: pointer;
+}
+
+.timer__btn--start {
+  background: transparent;
+}
+
+.timer__btn--stop {
+  background: transparent;
+}
+.down{
+  /* margin-top: 700px; */ 
+  align-items: center;
+ 
+}
+
+    </style>
+
+   
+</head>
+
+
+
+<body><div class="down">
+
+   <video  autoplay loop muted class="bg-video" src="./video/rain.mp4"></video>
+     <!-- ... -->
+     <!-- <p id="countdown" onclick="">M E D I T A T I O N</p> -->
+
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="timer"></div>
+ 
+     <audio src="" autoplay loop class="audioSource"></audio>
+
+     <select name="bg" id="sel" aria-placeholder="select">
+        <!-- <option value="cloud">Clouds</option> -->
+        <!-- <option value="fire2">Fire</option> -->
+        <!-- <option value="forest">Forest</option> -->
+        <option value="rain">Rain</option>
+        <!-- <option value="sun">Sunset</option> -->
+        <!-- <option value="calm">Calmforest</option> -->
+        <!-- <option value="star">Star</option> -->
+        <option value="budha">Meditation</option>
+    
+      </select></div>
+    
+    <script>
+      let userBG = document.querySelector('select')
+      let bgVd = document.querySelector('video')
+      let bgAudio = document.querySelector('.audioSource')
+      let bgSelectBtn = document.querySelector('select')
+    
+      bgSelectBtn.addEventListener('change', function(){
+    
+        console.log('changed select options')
+        // if(userBG.value =='calm'){
+        //   bgVd.src = "./video/forest_scene 1.mp4"
+        //   bgAudio.src = './sfx/sfx/Nature_Sound.mp3'
+        //   }
+          // if(userBG.value =='fire2'){
+          // bgVd.src = "./video/fire_scene.mp4"
+          // bgAudio.src = './sfx/fire_sound.mp3'
+          // }
+          // if(userBG.value =='cloud'){
+          // bgVd.src = "./video/cloud.mp4"
+          // bgAudio.src = './sfx/clouds.mp3'
+          // }
+          if(userBG.value =='rain'){
+          bgVd.src = "./video/rain.mp4"
+          bgAudio.src = './sfx/rain.mp3'
+         }
+          // if(userBG.value =='sun'){
+          // bgVd.src = "./video/sea sunset.mp4"
+          // bgAudio.src = './sfx/sea waves.mp3'
+          // }
+          // if(userBG.value =='calm'){
+          // bgVd.src = "./video/calm_forest.mp4"
+          // bgAudio.src = './sfx/Nature_Sound.mp3'
+          // }
+          // if(userBG.value =='star'){
+          // bgVd.src = "./video/star.mp4"
+          // bgAudio.src = './sfx/Deht.mp3'
+          // }
+          // if(userBG.value =='budha'){
+          // bgVd.src = "./video/buddha.mp4"
+          // bgAudio.src = './sfx/meditation.mp3'
+          // }
+      
+        })
+      
+    //    timer script
+    class Timer {
+  constructor(root) {
+    root.innerHTML = Timer.getHTML();
+
+    this.el = {
+      minutes: root.querySelector(".timer__part--minutes"),
+      seconds: root.querySelector(".timer__part--seconds"),
+      control: root.querySelector(".timer__btn--control"),
+      reset: root.querySelector(".timer__btn--reset")
+    };
+
+    this.interval = null;
+    this.remainingSeconds = 0;
+
+    this.el.control.addEventListener("click", () => {
+      if (this.interval === null) {
+        this.start();
+      } else {
+        this.stop();
+      }
+    });
+
+    this.el.reset.addEventListener("click", () => {
+      const inputMinutes = prompt("Enter number of minutes:");
+
+      if (inputMinutes < 60) {
+        this.stop();
+        this.remainingSeconds = inputMinutes * 60;
+        this.updateInterfaceTime();
+      }
+    });
+  }
+
+  updateInterfaceTime() {
+    const minutes = Math.floor(this.remainingSeconds / 60);
+    const seconds = this.remainingSeconds % 60;
+
+    this.el.minutes.textContent = minutes.toString().padStart(2, "0");
+    this.el.seconds.textContent = seconds.toString().padStart(2, "0");
+  }
+
+  updateInterfaceControls() {
+    if (this.interval === null) {
+      this.el.control.innerHTML = `<span class="material-icons">play_arrow</span>`;
+      this.el.control.classList.add("timer__btn--start");
+      this.el.control.classList.remove("timer__btn--stop");
+    } else {
+      this.el.control.innerHTML = `<span class="material-icons">pause</span>`;
+      this.el.control.classList.add("timer__btn--stop");
+      this.el.control.classList.remove("timer__btn--start");
+    }
+  }
+
+  start() {
+    if (this.remainingSeconds === 0) return;
+
+    this.interval = setInterval(() => {
+      this.remainingSeconds--;
+      this.updateInterfaceTime();
+
+      if (this.remainingSeconds === 0) {
+        this.stop();
+      }
+    }, 1000);
+
+    this.updateInterfaceControls();
+  }
+
+  stop() {
+    clearInterval(this.interval);
+
+    this.interval = null;
+
+    this.updateInterfaceControls();
+  }
+
+  static getHTML() {
+    return `
+			<span class="timer__part timer__part--minutes">00</span>
+			<span class="timer__part">:</span>
+			<span class="timer__part timer__part--seconds">00</span>
+			<button type="button" class="timer__btn timer__btn--control timer__btn--start">
+				<span class="material-icons">play_arrow</span>
+			</button>
+			<button type="button" class="timer__btn timer__btn--reset">
+				<span class="material-icons">timer</span>
+			</button>
+		`;
+  }
+}
+
+new Timer(
+	document.querySelector(".timer")
+);
+    </script>
+ 
+    <script src="script.js"></script>
+     
+</body>
+
+</html>
