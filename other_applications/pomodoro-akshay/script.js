@@ -97,9 +97,3 @@ function changeTimer(changer){
     
 }
 
-
-function greet(n){
-    console.log('hi', n)
-}
-
-greet()
