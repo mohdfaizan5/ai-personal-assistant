@@ -1,24 +1,26 @@
 // This will contain all the revisions with dates and it is stored in localStorage
 
 let allRevisions = [];
-console.log(localStorage.getItem('allRevisions'))
 
 // if there is no item in localStorage
 if(!localStorage.getItem('allRevisions')){
+  // allRevisions =
   localStorage.setItem('allRevisions', JSON.stringify(allRevisions) )
-}
-
-
-/*let allRevisions = [];
-console.log(localStorage.getItem('allRevisions'))
-if(localStorage.getItem('allRevisions') !== null){
-  allRevisions = JSON.parse(localStorage.getItem('allRevisions'));
+  console.log('assigning new localStorage')
 }
 else{
-  localStorage.setItem('allRevisions', JSON.stringify(allRevisions) )
+  console.log('reassigning exisiting localS')
+  allRevisions = JSON.parse(localStorage.getItem('allRevisions'))
+  console.log(allRevisions, typeof allRevisions)
 }
 
-*/
+console.log(localStorage.getItem('allRevisions'))
+
+
+let today = new Date()
+
+
+
 
 
 // console.log(a)
@@ -27,8 +29,25 @@ let results = document.querySelector('.final-result')
 let remindant = document.querySelector('#topic-input')
 document.addEventListener('DOMContentLoaded', ()=>{
 
-  document.querySelector('section').innerHTML = allRevisions
+  // 1st method
+  let txt = "";
+  for (let x in allRevisions) {
+  txt += allRevisions[x].task + " <br>";
+  };
+  document.querySelector('section').innerHTML = txt;
+  
+  // 2nd method:
+  // let display
+  // document.querySelector('section').innerHTML = allRevisions.forEach(e=>{
+  //   console.log(e.task)
+  // })
+  
 
+
+  // temp
+  // document.querySelector('section').innerHTML = Object.values(allRevisions)
+
+  
 });
 document.querySelector('#submit-btn').onclick = () => {
 
@@ -54,9 +73,7 @@ function revice() {
   console.log(r1, r2, r3)
   console.table(r1, r2, r3)
 
-  // fetching existing tasks from localStorage
-  allRevisions = localStorage.getItem('get')
-
+  
   // Storing the revisionTask in object
   let r = new Object()
   r.task = remindant.value;
@@ -66,17 +83,69 @@ function revice() {
   console.log(r)
   allRevisions.push(r)
   console.log(allRevisions)
-
+  
   
   // DOM manipulation:
   results.innerHTML = `
   <b>Will remind you with</b> : ${r.task} <br>
   <b>first revision</b>: ${r1.toString().slice(0,16)} <br> <b>Second revision</b>: ${r2.toString().slice(0,16)} <br> <b>Third revision</b>: ${r3.toString().slice(0,16)} \n`
-
+  
   // Storing values in local storage
-  // localStorage.setItem(JSON.stringify(allRevisions))
   localStorage.setItem('allRevisions', JSON.stringify(allRevisions))
-
+  
+  // fetching existing tasks from localStorage
+  // allRevisions = localStorage.getItem('allRevisions')
   // return false
 
 }
+
+
+let todayRevisionSection = document.querySelector('.todays_revision')
+
+let todayTasks = [];
+allRevisions.forEach((e)=>{
+
+  if(Number(e.r1.slice(8, 10)) === today.getDate()+1 && 
+    (Number(e.r1.slice(5, 7)) === today.getMonth()+1) && 
+    (Number(e.r1.slice(0, 4)) === today.getFullYear()))
+    {
+      // console.log(e.task);
+      todayTasks.push(e.task)
+      
+    }
+  if(Number(e.r2.slice(8, 10)) === today.getDate()+1 && 
+    (Number(e.r2.slice(5, 7)) === today.getMonth()+1) && 
+    (Number(e.r2.slice(0, 4)) === today.getFullYear()))
+    {
+      // console.log(e.task);
+      todayTasks.push(e.task)
+      
+    }
+
+  // For revision 3
+  if(Number(e.r3.slice(8, 10)) === today.getDate()+1 && 
+    (Number(e.r3.slice(5, 7)) === today.getMonth()+1) && 
+    (Number(e.r3.slice(0, 4)) === today.getFullYear()))
+    {
+      // console.log(e.task);
+      todayTasks.push(e.task)
+      
+    }
+
+  })
+  console.log(todayTasks)
+  todayTasks.forEach(task=>{
+    let newTask = document.createElement('li')
+    newTask.innerHTML = task;  
+    todayRevisionSection.appendChild(newTask)
+
+  })
+
+
+
+/*
+
+
+allRevisions.forEach((e)=>{if(Number(e.r1.slice(8,10)) === today.getDate()){console.log(e.task)}})
+
+*/

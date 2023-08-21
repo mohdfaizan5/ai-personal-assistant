@@ -30,13 +30,14 @@ function startPomo(){
 
     
     isIntervalWorking = true;
-    if(startBtn.innerHTML === 'Pause'){
-        startBtn.innerHTML = 'Play';
+    if(startBtn.innerHTML === '<i class="fa-solid fa-2xl fa-pause"></i>'){
+        console.log('stopped pomodoro')
+        startBtn.innerHTML = '<i class="fa-solid fa-2xl fa-play"></i>';
         clearInterval(interval1)
     }
     else{
-        
-        startBtn.innerHTML = 'Pause';
+        console.log('Started pomodoro')
+        startBtn.innerHTML = '<i class="fa-solid fa-2xl fa-pause"></i>';
         interval1 = setInterval(min, 1000)
 
     }
@@ -46,20 +47,24 @@ function startPomo(){
 function min(){
     seconds = seconds -1 
     document.querySelector('#secContainer1').innerHTML = seconds;
+    document.querySelector('#minContainer1').innerHTML = minutes;
+    
+    
+    
     if(seconds === 0){
         seconds = 60;
         minutes = minutes - 1
-        document.querySelector('#minContainer1').innerHTML = minutes;
+        if (minutes === 4){
+            speak(`last ${minutes + 1} minutes remaining`)
+        }
+
         if(minutes === -1){
             console.log('min is 0')
+            speak('Times up')
             console.log(seconds)
             clearInterval(interval1)
             document.querySelector('#minContainer1').innerHTML = 0;
             document.querySelector('.start').innerHTML = 'Break';
-            
-            document.querySelector('.start').disabled = false;
-
-
         }
     }
 
@@ -97,3 +102,9 @@ function changeTimer(changer){
     
 }
 
+
+function greet(n){
+    console.log('hi', n)
+}
+
+greet()

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+
+<script>
+  const grammar =
+  "#JSGF V1.0; grammar colors; public <color> = aqua | azure | beige | bisque | black | blue | brown | chocolate | coral | crimson | cyan | fuchsia | ghostwhite | gold | goldenrod | gray | green | indigo | ivory | khaki | lavender | lime | linen | magenta | maroon | moccasin | navy | olive | orange | orchid | peru | pink | plum | purple | red | salmon | sienna | silver | snow | tan | teal | thistle | tomato | turquoise | violet | white | yellow ;";
+  const recognition = new SpeechRecognition();
+  const speechRecognitionList = new SpeechGrammarList();
+  speechRecognitionList.addFromString(grammar, 1);
+  recognition.grammars = speechRecognitionList;
+
+  recognition.start()
+
+  console.log(speechRecognitionList[0].src); // should return the same as the contents of the grammar variable
+  console.log(speechRecognitionList[0].weight); // should return 1 - the same as the weight set in line 4.
+</script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <textarea style="
+      height: 50px;
+      min-width: 100%;
+      max-height: 150px;
+      min-height: 50px;
+      font-size: 18px;
+      overflow: visible;
+      resize: none;
+
+    " name="" id="" cols="30" rows="10"></textarea>
+  
+  <script>
+    const API_KEY = 'sk-2FMImxiM5LlSYsWOCvkgT3PlbkFJF79FvqmZt6RvhW3u5jyE'; // Your OpenAI API key goes here
+let userPrompt = 'tell me about incubation center';
+
+const generateResponse = async () => {
+  // Setting up the API to get specific details.
+  const API_URL = 'https://api.openai.com/v1/completions'; // Endpoint for API request
+  const requestOptions = {
+    method: 'POST', // HTTP method for the request
+    headers: {
+      'Content-Type': 'application/json', // Request content type
+      'Authorization': `Bearer ${API_KEY}` // Include the API key in the Authorization header
+    },
+    body: JSON.stringify({
+      model: 'text-davinci-003', // Model to use for text generation
+      prompt: userPrompt, // The text prompt you want to continue from
+      max_tokens: 2048, // Maximum number of tokens in the generated text
+      temperature: 0.2, // Sampling temperature for randomness in generation
+      n: 1, // Number of different completions to generate
+      stop: null // Stop token to halt the generation (null to let it continue)
+    })
+  };
+  // ... (rest of the function, currently empty)
+};
+
+// Calling/Requesting the API
+async function callingAI() {
+  try {
+    const response = await (await fetch(API_URL, requestOptions)).json();
+    console.log(response.choices[0].text); // Print the generated text
+  } catch (error) {
+    console.log('An error has occurred:');
+    console.log(error);
+  }
+}
+
+  </script>
+
+  <!-- <script>
+    // Replace 'YOUR_API_KEY' with your actual API key
+const apiKey = 'sk-2FMImxiM5LlSYsWOCvkgT3PlbkFJF79FvqmZt6RvhW3u5jyE';
+
+// API endpoint for text generation
+const apiUrl = 'https://api.openai.com/v1/completions';
+
+// Text prompt for generation
+const prompt = 'Once upon a time';
+
+// Data to send in the POST request
+const data = {
+  prompt,
+  max_tokens: 50, // Number of tokens in the generated text
+};
+
+// Make the API request
+fetch(apiUrl, {
+  method: 'POST',
+  body: JSON.stringify(data),
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${apiKey}`,
+  },
+})
+.then(response => response.json())
+.then(data => {
+  const generatedText = data.choices[0].text;
+  console.log('Generated Text:', generatedText);
+})
+.catch(error => {
+  console.error('Error:', error);
+});
+
+  </script> -->
+</body>
+</html> -->

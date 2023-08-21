@@ -1,5 +1,8 @@
 body{
   padding: 0px 10px;
+  /* margin-top: 200px; */
+  margin: 0px 80px;
+  font-size: 18px;
 }
 
 .faqContainer{
@@ -20,4 +23,33 @@ body{
 
 .answer span{
   text-decoration: underline;
+}
+
+h1{
+  text-align: center;
+}
+
+.question{
+  font-size: 32px;
+}
+  
+
+.feature_containers{
+  display: grid;
+  grid-template-columns: 400px 400px;
+  /* grid-template-rows: 2; */
+}
+
+.feature_container1{
+  width: 310px;
+  height: 550px;
+  border: 1px solid rgb(168, 85, 247);
+  border-radius: 12px;
+}
+
+.feature_containers li{
+  margin: 10px;
+  color: rgb(209, 213, 219);
+  list-style-type: '✔';
+  padding-inline-start: 1ch;
 }
