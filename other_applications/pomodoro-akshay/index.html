@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Pomodoro</title>
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -14,35 +16,27 @@
         <span>
             <span class="minContainer" id="minContainer1">
                 24
-            </span> :
-            <span class="secContainer" id="secContainer1">
-                0
+            </span>:<span class="secContainer" id="secContainer1">00
             </span>
         </span>
-        <div class="buttons">
-            <button class="start" onclick="startPomo()">Play</button>
-            <button class="reset" onclick="resetPomo() ">Reset</button>
-        </div>
         <div class="username">
 
         </div>
+
+        <div class="buttons">
+            <button class="start" onclick="startPomo()"><i class="fa-solid fa-2xl fa-play"></i></button>
+            <button class="reset" onclick="resetPomo() "><i class="fa-solid fa-arrows-rotate fa-2xl"></i></button>
+        </div>
         <div class="minInput">
             <h3>Session <br> Length</h3>
-            <button class="Sessionup" onclick="changeTimer('up')">
-                <svg xmlns="http://www.w3.org/2000/svg" height="1em"
-                    viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                    <path
-                        d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" />
-                </svg></button>
+            <button class="Sessionup" onclick="changeTimer('up')"><i class="fa-solid fa-lg fa-arrow-up"></i></button>
             <button class="Sessiondown" onclick="changeTimer('down')">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    height="1em"
-                    viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                    <path
-                        d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                </svg></button>
+                 <i class="fa-solid fa-lg fa-arrow-down"></i>
+            </button>
         </div>
     </main>
+    
+    <script src="../../static/js/speechRecognition.js"></script>
     <script src="script.js"></script>
 </body>
 

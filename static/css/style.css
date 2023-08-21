@@ -5,9 +5,12 @@
 }
 
 .about{
-  font-family: 'segoe_ui-semibold';
-  font-size: 40px;
-  width: 80%;
+  font-family: 'segoe_ui-black';
+  background-clip: text;
+  font-size: 60px;
+  background-image: -webkit-linear-gradient(179.1deg, #FFFFFF 0.77%, rgba(255, 255, 255, 0) 182.09%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;  width: 80%;
   text-align: center;
   margin-top: 100px;
   margin-bottom: 20px;
@@ -15,14 +18,12 @@
 
 
 
-
-
-
 .description{
   color: rgb(209, 213, 219);
-  font-size: 15px; 
+  font-size: 18px; 
   margin-bottom: 30px;
   color: rgb(209, 213, 219);
+  /* font-family: ; */
 }
 
 
@@ -46,7 +47,7 @@
   border-start-start-radius: 20px;
   border-end-start-radius: 20px;
   margin-bottom: 30px;
-  color: white; 
+  color: white;  
   font-size: 18px;
 }
 /* .prompt-input:focus{
@@ -91,16 +92,6 @@
 
 
 
-/* footer */
-
-footer{
-  position: relative;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-}
 
 
 /* About Us */
@@ -110,24 +101,92 @@ footer{
 /* User and ai chat panel */
 .other-details{
   /* Styles */
-  height: 900px;
+  min-height: 900px;
   width: 1200px;
   background-image: linear-gradient(to left,rgb(92,74,150) ,rgb(162,134,213));
   border-radius: 30px;
   box-shadow: 0px -5px 85px rgba(162, 134, 213, 0.466);
-  padding: 10px;
+  padding: 15px 30px ;
   /* Data inside */
+  
 }
 section{
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .user-ai-chat-container{
-  color: black;
+  color: white;
+  font-size: 19px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  border: 1px solid red;
+
 }
+
+/* ✔✔✔ */
+.final-chat-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 500px;
+  /* border: 1px dotted red; */
+}
+.chat-container1{
+  width: 75%;
+  /* border: 1px solid rgb(31, 41, 55); */
+  border: 1px solid rgb(168, 85, 247);
+  background-color: rgb(31, 41, 55);
+  border-radius: 26px;
+  height: 300px;
+  padding: 16px;
+  font-size: 18px;
+}
+
+.ai-question{
+  color: rgb(145, 49, 231);
+
+}
+
+.ai-answer{
+  margin-left: 30px;
+  color: rgb(17, 24, 39);
+  color: white;
+  line-height: 1.15;
+}
+
+/* ✔✔✔ */
+
+/* .user-ai-chat-container div { */
+.user-ai-chat-container .user-one-chat {
+  width: 90%;
+  padding: 16px;
+  height: 310px;
+  width: 550px;
+  /* border: 1px solid rgb(168, 85, 247); */
+  border: 1px solid rgb(31, 41, 55);
+  border-radius: 12px;
+  /* background-color: rgb(31, 41, 55); */
+  /* background-image: radial-gradient(157.73% 157.73% at 50% -29.9%, rgba(203, 213, 225, 0.16) 0%, rgba(203, 213, 225, 0) 100%); */
+  /* background-image: radial-gradient(157.73% 157.73% at 50% -29.9%, rgba(203, 213, 225, 0.16) 0%, rgba(203, 213, 225, 0) 100%); */
+  border-radius: 12px;
+}
+
+/* .user-ai-chat-container div */
+.user-ai-chat-container .question{
+  font-size: 20px;
+  color: rgb(209, 213, 219);
+}
+
+.user-ai-chat-container p{
+  margin: 10px;
+}
+
 
 
 /* wave visuals */

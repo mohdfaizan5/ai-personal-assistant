@@ -33,3 +33,34 @@ nav{
   margin-right: 10px;
   /* display: inline-block; */
 }
+
+
+/* footer part */
+
+footer{
+  position: relative;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: block;
+  margin-top: 80px;
+}
+
+.custom-screen{
+
+  padding: 0px 32px;
+  margin: 0px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgb(31, 41, 55);
+
+}
+
+footer p{
+  display: inline-block;
+}
+
+footer div{
+  display: inline-block;
+}

@@ -56,9 +56,3 @@ https://www.youtube.com/playlist?list=PLkjZS1KzvTGHKJnWMSz_IguydzRrTEHC2 - Aweso
 
 #### Machine learning:
 Computer Vision with Machine Learning | Building My own AI Home Assistant | Ghost AI https://www.youtube.com/watch?v=OzXsZjjk1zY&list=PLR8vUZDE6IePK09ZcROHLnSSiuZzFNcrr&index=4
-
-
-
-
-
-

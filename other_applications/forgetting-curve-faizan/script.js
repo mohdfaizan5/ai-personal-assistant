@@ -17,6 +17,10 @@ else{
 console.log(localStorage.getItem('allRevisions'))
 
 
+let today = new Date()
+
+
+
 
 
 // console.log(a)
@@ -94,3 +98,54 @@ function revice() {
   // return false
 
 }
+
+
+let todayRevisionSection = document.querySelector('.todays_revision')
+
+let todayTasks = [];
+allRevisions.forEach((e)=>{
+
+  if(Number(e.r1.slice(8, 10)) === today.getDate()+1 && 
+    (Number(e.r1.slice(5, 7)) === today.getMonth()+1) && 
+    (Number(e.r1.slice(0, 4)) === today.getFullYear()))
+    {
+      // console.log(e.task);
+      todayTasks.push(e.task)
+      
+    }
+  if(Number(e.r2.slice(8, 10)) === today.getDate()+1 && 
+    (Number(e.r2.slice(5, 7)) === today.getMonth()+1) && 
+    (Number(e.r2.slice(0, 4)) === today.getFullYear()))
+    {
+      // console.log(e.task);
+      todayTasks.push(e.task)
+      
+    }
+
+  // For revision 3
+  if(Number(e.r3.slice(8, 10)) === today.getDate()+1 && 
+    (Number(e.r3.slice(5, 7)) === today.getMonth()+1) && 
+    (Number(e.r3.slice(0, 4)) === today.getFullYear()))
+    {
+      // console.log(e.task);
+      todayTasks.push(e.task)
+      
+    }
+
+  })
+  console.log(todayTasks)
+  todayTasks.forEach(task=>{
+    let newTask = document.createElement('li')
+    newTask.innerHTML = task;  
+    todayRevisionSection.appendChild(newTask)
+
+  })
+
+
+
+/*
+
+
+allRevisions.forEach((e)=>{if(Number(e.r1.slice(8,10)) === today.getDate()){console.log(e.task)}})
+
+*/

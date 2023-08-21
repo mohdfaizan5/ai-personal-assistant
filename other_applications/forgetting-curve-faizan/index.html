@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Forgetting Curve</title>
-  <style>
+  <style> 
     body{
-      background-color: rgb(234, 234, 234);
-      color: rgb(37, 42, 52);
+      background-color: rgb(17, 24, 39);
+      color: white;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       display: flex;
       flex-direction: column;
@@ -16,7 +16,8 @@
     }
 
     h1{
-      color: rgb(255, 46, 99);
+      /* color: rgb(145, 49, 231); */
+      color: rgb(147, 51, 234);
     }
 
     #topic-input{
@@ -35,8 +36,13 @@
       border: none;
       border-radius: 5px;
     }
+    .container{
+      display: flex;
+      column-gap: 50px;
+    }
 
   </style>
+
 </head>
 
 <body>
@@ -47,10 +53,22 @@
     <button id="submit-btn" type="submit">Remind me</button>
   </form>
   <div class="final-result"></div>
-  <h1>All curves</h1>
-  <section>
+  
+  <div class="container">
+
+    <div>
+      <h1>All curves</h1>
+      <section></section>
+    </div>
+
+    <div>
+      <h1>Todays Revision</h1>
+      <ul class="todays_revision">
+    </div>
     
-  </section>
+      
+    </ul>
+  </div>
 
   <script src="script.js">
 
