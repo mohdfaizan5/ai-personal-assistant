@@ -11,7 +11,7 @@ body{
 }
 
 .container{
-  margin: 200px auto 0;    /* top leftRight bottom*/
+  margin: 160px auto 0;    /* top leftRight bottom*/
   max-width: 450px;
   padding: 30px 40px 40px; 
   background-color: rgb(234,234,234);
@@ -67,7 +67,49 @@ ul li{
   font-size: 17px;
   user-select: none;
   cursor: pointer;
-  
+ position: relative; 
+}
 
+ul li::before{
+  content: '';
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-image: url(assets/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  left: 10px;
+  top: 10px;
+}
+ 
+ul li.checked{
+  color: rgb(255,46,99);
+  text-decoration: line-through;
+}
+
+ul li.checked::before{
+  background-image: url(assets/check.png);
+}
+
+ul li span{
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 25px;
+  line-height: 40px;
+  background-color: rgb(37,42,52);
+  color: white ;
+  font-weight: bold;
+}
+
+ul li span:hover{
+  color: rgb(37,42,52);
+  background-color: rgb(255,46,99);
+  transition: .4s;
 }
 
