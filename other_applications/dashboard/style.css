@@ -1,0 +1,132 @@
+body{
+    background-color:rgba(92,74,150,.7);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+    
+    }
+    
+    
+    
+    .table{
+        height: 110vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        column-gap: 20px;
+        
+       
+    }
+    
+    nav{
+        
+        height: 103vh;
+        background-color: rgb(162,134,213);
+        border: 3px solid black;
+        border-radius: 15px;
+        font-size: x-large;
+        margin-top: 5px;
+        padding: 13px; 
+        transition: 0.4s linear;
+    
+    }
+    nav:hover{
+        background-color: rgba(92,74,150,1);
+        transform: scale(2px);
+    }
+    .contents{
+        border: 1px solid black;
+        margin-top: 5px;
+        display: grid;
+        
+        column-gap: 20px;
+        height: 108vh;
+    
+    }
+.container{
+ background-color: white;
+ display: grid;
+ grid-template-columns: 75% 25%;
+}
+.container1{
+    background-color: red;
+
+}
+.container2{
+    background-color: rgba(92,74,150,.9);
+    display: grid;
+    grid-template-rows: 65% 35%;
+
+    border-radius: 30px;
+
+
+}
+.subcontainer{
+  
+}
+.subcontainer-profile{
+    background-color: white;
+    display: grid;
+    grid-template-rows: 15% 55% 30%;
+}
+.profile{
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: row;
+}
+
+.progress{
+    background-color: rgba(92,74,150,1);
+}
+.projects{
+    background-color: #fff;
+}
+
+.profile-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 60%;
+    padding: 10px;
+    justify-content: space-between;
+   
+    
+
+}
+
+.circle{
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin: 20px 50px 0px;
+}
+
+h4{
+    margin: 0;
+}
+.projects{
+    display: grid;
+    grid-template-rows: 20% 80%;
+}
+
+
+
+.projects-container{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+}
+
+.total{
+    background-color: black;
+}
+.completed{
+    background-color: blue;
+}
+.inprogress{
+    background-color: blue;
+}
+.waiting{
+    background-color: black;
+}
