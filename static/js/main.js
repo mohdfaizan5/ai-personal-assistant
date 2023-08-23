@@ -45,6 +45,11 @@ btn.addEventListener('click', function(){
   console.log(userText)
 
 
+  if(userText.includes('open my instagram')){
+    speak('opening your instagram account')
+    window.open('https://instagram.com/mohdfaizan_5')
+  }
+
   // Clearing input from voice command
   if (userText.includes('clear input')){
     console.log(`before clearing user input ${userText}`)
@@ -245,3 +250,6 @@ function getNews(){
           console.log(JSON.parse(response));
       })
 }
+
+// check wheather you're online or offline
+// const isOnline = window.navigator.onLine; isOnline

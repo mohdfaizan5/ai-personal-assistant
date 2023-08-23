@@ -37,6 +37,26 @@
 
 ref (https://eclipsefin.netlify.app/?ref=landingfolio)
 
+## AI technical terms
+
+
+
+## Competator research conclusions:
+
+
+
+
+## All Features:
+
+
+
+
+## Business Model
+
+
+
+## Architecture used
+
 
 
 ### video references

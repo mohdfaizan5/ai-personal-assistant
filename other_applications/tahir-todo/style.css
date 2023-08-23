@@ -14,7 +14,8 @@ body{
   margin: 160px auto 0;    /* top leftRight bottom*/
   max-width: 450px;
   padding: 30px 40px 40px; 
-  background-color: rgb(234,234,234);
+  /* background-color: rgb(234,234,234); */
+  background-color: rgb(17, 24, 39);
   border-radius: 10px;
 }
 
@@ -24,7 +25,8 @@ body{
 }
 
 .todo-app h2{
-  color: rgb(255,46,99);
+  /* color: rgb(255,46,99); */
+  color: rgb(145, 49, 231);
   font-weight: bold;
   font-size: 35px;
   text-align: center;
@@ -47,18 +49,19 @@ body{
   border: none;
   background: transparent;
   padding: 10px;
+  font-size: 16px;
 }
 
 .add-button{
   outline: none;
   border: none;
-  background: rgb(255,46,99);
+  background: rgb(145, 49, 231);
   padding: 16px 40px;
   border-radius: 40px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  color: rgb(37,42,52);
+  color: white;
 }
 
 ul li{
@@ -84,7 +87,7 @@ ul li::before{
 }
  
 ul li.checked{
-  color: rgb(255,46,99);
+  color: rgb(145, 49, 231);
   text-decoration: line-through;
 }
 
@@ -108,8 +111,11 @@ ul li span{
 }
 
 ul li span:hover{
-  color: rgb(37,42,52);
-  background-color: rgb(255,46,99);
+  color: white;
+  background-color: rgb(145, 49, 231);
   transition: .4s;
 }
 
+li{
+  color: white;
+}

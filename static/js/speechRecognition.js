@@ -4,7 +4,7 @@ function speak(text){
   let utterance = new SpeechSynthesisUtterance();
 
   // Changing voice to girl
-  utterance.voice = window.speechSynthesis.getVoices()[5]; //Eng Google UK Female.
+  // utterance.voice = window.speechSynthesis.getVoices()[5]; //Eng Google UK Female.
 
   // speak what arg is passed to it.
   utterance.text = text
@@ -63,7 +63,7 @@ function speak(text){
 
   }  
 
-
+// THis part is not required since we can call for recognition by 
 // function listen(){
   
 //   // Some browsers may not support, backup webkit for those

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OPen api</title>
+</head>
+<body>
+  <script>
+    // const API_KEY = 'sk-2FMImxiM5LlSYsWOCvkgT3PlbkFJF79FvqmZt6RvhW3u5jyE' //kupendra
+    // const API_KEY = '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' // faizan
+    const API_KEY = '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' // LIKITHA
+let userPrompt = 'tell me about incubation center'
+
+
+const generateResponse = async () => {
+
+
+  // Setting up the API to get specific details.
+  const API_URL = 'https://api.openai.com/v1/completions' // From where request needs to be done
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${API_KEY}`
+    },
+    body: JSON.stringify({
+      model: 'text-davinci-003',
+      prompt: userPrompt,
+      max_tokens: 2048,
+      temperature: 0.2,
+      n: 1,
+      stop: null
+    })
+  }
+
+  try {
+    console.log('calling the openai api')
+    const response = await(await fetch(API_URL, requestOptions)).json();
+    console.log(response.choices[0].text)
+  }
+  catch (error) {
+    console.log('error has occurred ')
+    // console.error(error)
+  }
+
+}
+
+// Calling/Requesting the API
+// function callingAI() {
+  
+// }
+  </script>
+</body>
+</html>
